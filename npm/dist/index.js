@@ -83,7 +83,9 @@ class Binary {
                 await this.download(url);
                 return true;
             }
-            catch (error) { }
+            catch (error) {
+                console.log("download resource of: ", url, " failed with error: ", error);
+            }
         }
         throw new Error(`Failed to download from: \n${this.urls.join("\n")}`);
     }
